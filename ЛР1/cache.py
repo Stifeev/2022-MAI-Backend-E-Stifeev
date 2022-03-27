@@ -32,7 +32,7 @@ class LRUCache:
             self.data[key] = value
         else:
             if len(self.data) + 1 > self.capacity: # проверка на переполнение
-                # удаляем последнее значение (в порядке добавление)
+                # удаляем первое значение (в порядке добавление)
                 del self.data[next(iter(self.data.keys()))]
             self.data[key] = value
             
