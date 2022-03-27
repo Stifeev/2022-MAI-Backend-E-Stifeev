@@ -6,7 +6,6 @@ Created on Wed Feb 23 21:33:17 2022
 """
 
 from cache import LRUCache
-from time import sleep
 
 #%% Пример 1
 
@@ -18,8 +17,7 @@ print(cache.get('Jesse'))  # вернёт 'James'
 cache.rem('Walter')
 print(cache.get('Walter')) # вернёт ''
 
-print("capacity = %d" % cache.capacity)
-print(["%s : %s" % (key, str(val)) for key, val in cache.data.items()])
+print(cache)
 
 #%% Пример 2
 
@@ -29,11 +27,9 @@ cache.set('A', 'B')
 cache.set('C', 'D')
 cache.set('E', 'F')
 
-sleep(0.5)
-
 cache.get('A')
 cache.get('E')
 cache.set('G', 'H') # ('C', 'D') удалится, т.к. у неё самое старое время запроса
 
-print("capacity = %d" % cache.capacity)
-print(["%s : %s" % (key, str(val)) for key, val in cache.data.items()])
+print(cache) # capacity = 3, data = {'A': 'B', 'E': 'F', 'G': 'H'}
+
