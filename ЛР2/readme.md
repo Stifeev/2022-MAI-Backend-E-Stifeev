@@ -143,11 +143,19 @@ Connection Times (ms)
 Percentage of the requests served within a certain time (ms)
 
 50%      2
+
 66%      2
+
 75%      2
+
 80%      2
+
 90%      2
+
 95%      2
+
 98%      7
+
 99%     11
+
 100%     19 (longest request)
