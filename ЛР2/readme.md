@@ -35,15 +35,23 @@ Connection Times (ms)
 | Total:      | 1    | 2    | 0.3     | 2      | 3    |
 
 Percentage of the requests served within a certain time (ms)
-  50%      2
-  66%      2
-  75%      2
-  80%      2
-  90%      2
-  95%      2
-  98%      3
-  99%      3
- 100%      3 (longest request)
+50%      2
+
+66%      2
+
+75%      2
+
+80%      2
+
+90%      2
+
+95%      2
+
+98%      3
+
+99%      3
+
+100%      3 (longest request)
 
 ## Бэкенд сервер unicorn напрямую
 
@@ -70,23 +78,32 @@ Time per request:       0.820 [ms] (mean, across all concurrent requests)
 Transfer rate:          229.76 [Kbytes/sec] received
 
 Connection Times (ms)
+
 |             | min  | mean | [+/-sd] | median | max  |
 | ----------- | ---- | ---- | ------- | ------ | ---- |
-| Connect:    |   0  |  0  | 0.9      |0      |15    |
-| Processing: | 1    |1  | 0.4     | 1   |   12    |
-| Waiting:    | 0   | 1  | 0.4   |   1    |  11    |
-| Total:      |  1  |  2 |  1.1    |  1   |   18    |
+| Connect:    | 0    | 0    | 0.9     | 0      | 15   |
+| Processing: | 1    | 1    | 0.4     | 1      | 12   |
+| Waiting:    | 0    | 1    | 0.4     | 1      | 11   |
+| Total:      | 1    | 2    | 1.1     | 1      | 18   |
 
 Percentage of the requests served within a certain time (ms)
-  50%      1
-  66%      1
-  75%      2
-  80%      2
-  90%      2
-  95%      2
-  98%      2
-  99%      3
- 100%     18 (longest request)
+50%      1
+
+66%      1
+
+75%      2
+
+80%      2
+
+90%      2
+
+95%      2
+
+98%      2
+
+99%      3
+
+100%     18 (longest request)
 
 ## Бэкенд сервер unicorn через проксирование в nginx
 
@@ -114,20 +131,21 @@ Time per request:       1.043 [ms] (mean, across all concurrent requests)
 Transfer rate:          193.01 [Kbytes/sec] received
 
 Connection Times (ms)
+
 |             | min  | mean | [+/-sd] | median | max  |
 | ----------- | ---- | ---- | ------- | ------ | ---- |
-| Connect:    |   0  |  0  | 0.6    |  0   |   16    |
-| Processing: | 1  |  2 |  1.3   |   2   |   18    |
-| Waiting:    | 1  |  1  | 1.1  |    1   |   16    |
-| Total:      |  1  |  2 |  1.6  |    2  |    19    |
+| Connect:    | 0    | 0    | 0.6     | 0      | 16   |
+| Processing: | 1    | 2    | 1.3     | 2      | 18   |
+| Waiting:    | 1    | 1    | 1.1     | 1      | 16   |
+| Total:      | 1    | 2    | 1.6     | 2      | 19   |
 
 Percentage of the requests served within a certain time (ms)
-  50%      2
-  66%      2
-  75%      2
-  80%      2
-  90%      2
-  95%      2
-  98%      7
-  99%     11
- 100%     19 (longest request)
+50%      2
+66%      2
+75%      2
+80%      2
+90%      2
+95%      2
+98%      7
+99%     11
+100%     19 (longest request)
