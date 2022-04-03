@@ -35,6 +35,7 @@ Connection Times (ms)
 | Total:      | 1    | 2    | 0.3     | 2      | 3    |
 
 Percentage of the requests served within a certain time (ms)
+
 50%      2
 
 66%      2
@@ -87,6 +88,7 @@ Connection Times (ms)
 | Total:      | 1    | 2    | 1.1     | 1      | 18   |
 
 Percentage of the requests served within a certain time (ms)
+
 50%      1
 
 66%      1
@@ -110,7 +112,6 @@ Percentage of the requests served within a certain time (ms)
 $ ab -n 10 -c 2 -t 1 -v 2 http://192.168.31.211/backend/
 
 Finished 959 requests
-
 
 Server Software:        nginx/1.10.3
 Server Hostname:        192.168.31.211
@@ -140,6 +141,7 @@ Connection Times (ms)
 | Total:      | 1    | 2    | 1.6     | 2      | 19   |
 
 Percentage of the requests served within a certain time (ms)
+
 50%      2
 66%      2
 75%      2
