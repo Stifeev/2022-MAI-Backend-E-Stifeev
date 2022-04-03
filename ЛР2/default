@@ -48,14 +48,14 @@ server {
 	proxy_set_header Host $host;
 	proxy_set_header X-Real-IP $remote_addr;
 
-    # отдача статики
-    location /public/ {                    
-        alias /home/Stifeev/LR2/content/;
-    }
+	# отдача статики
+    	location /public/ {                    
+       	 	alias /home/Stifeev/LR2/content/;
+    	}
     
-    location /backend/ {
-        proxy_pass http://backend;
-    }
+    	location /backend/ {
+        	proxy_pass http://backend;
+    	}
     
 	location / {
 		# First attempt to serve request as file, then
