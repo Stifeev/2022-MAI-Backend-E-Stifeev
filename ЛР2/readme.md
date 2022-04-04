@@ -1,3 +1,10 @@
+# Описание репозитория
+
+- content - директория с статическими файлами (на машине хранится в /home/Stifeev/LR2/content);
+- unicorn - Python-исходники для бэкенд-сервера;
+- default.conf - файл конфигурации nginx (на машине хранится в /etc/nginx/sites-available);
+- nginx.conf - файл конфигурации nginx (хранится в /etc/nginx)
+
 # Замеры производительности с помощью утилиты ab
 
 ## Отдача статики
@@ -79,13 +86,12 @@ Time per request:       0.820 [ms] (mean, across all concurrent requests)
 Transfer rate:          229.76 [Kbytes/sec] received
 
 Connection Times (ms)
-
 |             | min  | mean | [+/-sd] | median | max  |
 | ----------- | ---- | ---- | ------- | ------ | ---- |
-| Connect:    | 0    | 0    | 0.9     | 0      | 15   |
-| Processing: | 1    | 1    | 0.4     | 1      | 12   |
-| Waiting:    | 0    | 1    | 0.4     | 1      | 11   |
-| Total:      | 1    | 2    | 1.1     | 1      | 18   |
+| Connect:    |   0  |  0  | 0.9      |0      |15    |
+| Processing: | 1    |1  | 0.4     | 1   |   12    |
+| Waiting:    | 0   | 1  | 0.4   |   1    |  11    |
+| Total:      |  1  |  2 |  1.1    |  1   |   18    |
 
 Percentage of the requests served within a certain time (ms)
 
@@ -113,6 +119,7 @@ $ ab -n 10 -c 2 -t 1 -v 2 http://192.168.31.211/backend/
 
 Finished 959 requests
 
+
 Server Software:        nginx/1.10.3
 Server Hostname:        192.168.31.211
 Server Port:            80
@@ -132,13 +139,12 @@ Time per request:       1.043 [ms] (mean, across all concurrent requests)
 Transfer rate:          193.01 [Kbytes/sec] received
 
 Connection Times (ms)
-
 |             | min  | mean | [+/-sd] | median | max  |
 | ----------- | ---- | ---- | ------- | ------ | ---- |
-| Connect:    | 0    | 0    | 0.6     | 0      | 16   |
-| Processing: | 1    | 2    | 1.3     | 2      | 18   |
-| Waiting:    | 1    | 1    | 1.1     | 1      | 16   |
-| Total:      | 1    | 2    | 1.6     | 2      | 19   |
+| Connect:    |   0  |  0  | 0.6    |  0   |   16    |
+| Processing: | 1  |  2 |  1.3   |   2   |   18    |
+| Waiting:    | 1  |  1  | 1.1  |    1   |   16    |
+| Total:      |  1  |  2 |  1.6  |    2  |    19    |
 
 Percentage of the requests served within a certain time (ms)
 
@@ -158,4 +164,4 @@ Percentage of the requests served within a certain time (ms)
 
 99%     11
 
-100%     19 (longest request)
+100%    19 (longest request)
