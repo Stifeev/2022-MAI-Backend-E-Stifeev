@@ -1,0 +1,45 @@
+# бэкенд-сервер 1
+upstream backend {
+    server localhost:8000 weight=1 max_fails=3 fail_timeout=360s;
+}
+
+# бэкенд-сервер 2
+upstream jango {
+    server localhost:8010 weight=1 max_fails=3 fail_timeout=360s;
+}
+
+# Default server configuration
+
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    root /var/www/html;
+
+    # Add index.php to the list if you are using PHP
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name _;
+        
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+
+    # отдача статики
+    location /public/ {                    
+        alias /home/Stifeev/LR3/content/;
+    }
+    
+    location /backend/ {
+        proxy_pass http://backend;
+    }
+    
+    location /jango/ {
+        proxy_pass http://jango;
+    }
+    
+    location / {
+        # First attempt to serve request as file, then
+        # as directory, then fall back to displaying a 404.
+        try_files $uri $uri/ =404;
+    }
+}
