@@ -4,7 +4,7 @@
 
 - unicorn - Python-исходники для бэкенд-сервера;
 
-- default.conf - файл конфигурации nginx (на машине хранится в /etc/nginx/sites-available);
+- default - файл конфигурации nginx (на машине хранится в /etc/nginx/sites-available);
 
 - nginx.conf - файл конфигурации nginx (хранится в /etc/nginx)
 
