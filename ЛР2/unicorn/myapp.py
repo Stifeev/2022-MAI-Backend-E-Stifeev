@@ -8,7 +8,7 @@ Created on Sun Apr  3 15:34:43 2022
 import datetime
 
 def app(environ, start_response):
-    
+    # Бизнес-логика
     now = datetime.datetime.now()
     data = "Welcome to the server backend\nCurrent date is %d.%d.%d" % (now.day, now.month, now.year)
     data = data.encode("ascii")
