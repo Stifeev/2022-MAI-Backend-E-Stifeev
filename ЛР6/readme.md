@@ -27,4 +27,4 @@ $ docker-compose up
 - http://localhost/public/index.html отдача статики с nginx
 - http://localhost/jango/ переход с nginx на django (upstream)
 - http://localhost:8000/ прямая ссылка на django
-- http://localhost:8000/admin/login/?next=/admin/ админка django (username: admin, password: admin)
+- http://localhost:8000/admin админка django (username: admin, password: admin)
