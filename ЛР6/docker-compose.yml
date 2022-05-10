@@ -1,0 +1,76 @@
+version: '3.3'
+
+services:
+
+  postgre_sql:
+    build:
+      context: postgreSQL
+      dockerfile: Dockerfile
+    container_name: postgre_sql
+    environment:
+      POSTGRES_USER: "film_admin"
+      POSTGRES_DB: "film_base"
+      POSTGRES_PASSWORD: "567765"
+      POSTGRES_HOST_AUTH_METHOD: trust
+    volumes:
+      - pgdata:/var/lib/posgresql/data
+
+    networks:
+      - mai-network
+
+    ports:
+      - "5432:5432" # порт PostgreSQL
+
+    restart: always
+
+  nginx_server:
+    build:
+      context: nginx
+      dockerfile: Dockerfile
+    container_name: nginx_server
+    
+    # stdin_open: true # docker run -i
+    # tty: true        # docker run -t
+    restart: always
+
+    volumes:
+      - ./nginx/content:/home
+
+    ports:
+      - "80:80" # порт nginx
+
+    networks:
+      - mai-network
+
+    # command: sh -c "python3 film_project/manage.py migrate &&
+    #                 python3 film_project/manage.py shell < script.py &&
+    #                 python3 film_project/manage.py runserver 0.0.0.0:8000"
+    
+  django_server:
+    build:
+      context: django_server
+      dockerfile: Dockerfile
+    container_name: django_server
+   
+    restart: always
+
+    ports:
+      - "8000:8000" # порт Django
+
+    networks:
+      - mai-network
+
+    depends_on:
+      - postgre_sql
+    
+    command: sh -c "python3 film_project/manage.py migrate &&
+                    python3 film_project/manage.py shell < script.py &&
+                    python3 film_project/manage.py runserver 0.0.0.0:8000"
+
+volumes:
+  pgdata:
+
+networks:
+  mai-network:
+    driver: "bridge"
+    external: false
