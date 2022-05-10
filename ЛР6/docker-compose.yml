@@ -29,8 +29,6 @@ services:
       dockerfile: Dockerfile
     container_name: nginx_server
     
-    # stdin_open: true # docker run -i
-    # tty: true        # docker run -t
     restart: always
 
     volumes:
@@ -42,10 +40,6 @@ services:
     networks:
       - mai-network
 
-    # command: sh -c "python3 film_project/manage.py migrate &&
-    #                 python3 film_project/manage.py shell < script.py &&
-    #                 python3 film_project/manage.py runserver 0.0.0.0:8000"
-    
   django_server:
     build:
       context: django_server
