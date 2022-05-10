@@ -1,9 +1,0 @@
-docker run -it film-project:latest /bin/bash
-
-docker run -it \
--v "D:\Мои документы\Лабы и рефераты\5 курс 2 семестр\Программная инженерия\ЛР6\film_project":/home/film_project \
-film-project:latest \
--p 
-/bin/bash
-
-docker build -t film-project:latest .
