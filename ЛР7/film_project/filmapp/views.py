@@ -24,7 +24,6 @@ class DirectorViewSet(viewsets.ViewSet):
             director = Director()
             director.name = serializer.validated_data["name"]
             director.year = serializer.validated_data["year"]
-            director.original_name = serializer.validated_data["original_name"]
             director.save()
             return Response({"status": "OK"})
         else:
