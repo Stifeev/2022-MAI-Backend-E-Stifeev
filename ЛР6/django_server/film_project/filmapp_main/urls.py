@@ -18,10 +18,12 @@ from django.urls import path, re_path
 from filmapp import views
 
 urlpatterns = [
-    path('', views.index, name='home'),
-    re_path(r'^jango/{0,1}$', views.index, name='home'),
+    path("", views.index, name='home'),
+    path("jango/", views.index, name='home'),
     
-    re_path(r"^[jango/]{0,1}film/", views.film_handler),
+    path("film/", views.film_handler),
+    path("jango/film/", views.film_handler), 
     
-    path('admin/', admin.site.urls),
+    path("admin/", admin.site.urls),
+    path("jango/admin/", admin.site.urls)
 ]
