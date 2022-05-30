@@ -1,0 +1,16 @@
+version: '3.3'
+
+services:
+
+  nginx_server:
+    build:
+      context: nginx
+      dockerfile: Dockerfile
+    container_name: nginx_server
+    restart: always
+
+    volumes:
+      - ./nginx/content:/home
+
+    ports:
+      - "80:80" # порт nginx
